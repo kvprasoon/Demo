@@ -8,15 +8,15 @@
 
   >- Sr. Software Engineer @ Philips
 
-  >- Moderator @ PowerShell.org
+  >- Moderator @ [PowerShell.org](www.powershell.org)
 
-  >- Tweets with @prasoonkaruanan
+  >- Tweets with [@prasoonkaruanan](twitter.com/prasoonkarunan)
 
   >- <a href="https://stackoverflow.com/users/4980370/prasoon-karunan-v"><img src="https://stackoverflow.com/users/flair/4980370.png"></a>
 
-  >- github.com/kvprasoon
+  >- [github.com/kvprasoon](github.com/kvprasoon)
 
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 # Extending Pester results with suggestions and web report.
 
@@ -25,7 +25,7 @@
 
 
 
->### - [What is debugging ?](#What-is-debugging )
+>### - [What is pester ?](#What-is-pester)
 
 >### - [Cmdlets enabling debugging in PowerShell.](#Cmdlets-enabling-debugging-in-PowerShell)
 
@@ -36,16 +36,13 @@
 >### - [Debugging in remote session.](#Debugging-in-remote-session.)
 
 
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br />
 
-># What is debugging ?
+># What is pester ?
 
-   - The process of identifying and removing errors from computer hardware or software.
+Pester is aunit testing framework for PowerShell scrtips. It is used for operational validation as well. More details [here](github.com/pester/pester/wiki).
 
-   -  In software development, debugging involves locating and correcting code errors in a computer program.
-
-   - Debugging is the process of detecting and removing of existing and potential errors (also called as ‘bugs’) in a software code that can cause it to behave unexpectedly or crash
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br />
 ># Cmdlets enabling debugging in PowerShell.
 
    Debugging in PowerShell can be done via both UI(a code editor) and command line. The command line debuggin in PowerShell is acheived using below cmdlets.
