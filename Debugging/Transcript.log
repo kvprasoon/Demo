@@ -1,0 +1,611 @@
+**********************
+PowerShell transcript start
+Start time: 20190216142827
+Username: RDFC\kvprasoon
+RunAs User: RDFC\kvprasoon
+Configuration Name: 
+Machine: RDFC (Microsoft Windows NT 10.0.18334.0)
+Host Application: C:\Program Files\PowerShell\6-preview\pwsh.dll
+Process ID: 8508
+PSVersion: 6.2.0-preview.4
+PSEdition: Core
+GitCommitId: 6.2.0-preview.4
+OS: Microsoft Windows 10.0.18334 
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.2.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\dev\PowerShell\Demo\Debugging\Transcript.log
+♥->clear
+♥->cls
+♥->C:\dev\PowerShell\Demo\Debugging\Upgradepwsh.ps1 -Prerelease
+Installed pwsh version is 6.2.0-preview.4
+Fetching latest releases
+Currenlty executing pwsh is with latest available version
+♥->C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1 -Prerelease
+Installed pwsh version is 6.2.0-preview.4
+Fetching latest releases
+Latest released packages are below
+Downloading latest release
+♥->TerminatingError(Invoke-WebRequest): "Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+>> TerminatingError(Invoke-WebRequest): "Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+>> TerminatingError(): "pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'"
+>> TerminatingError(): "pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'"
+pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+At C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1:135 char:5
++     Throw "pwsh update failed with error '$_'"
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : OperationStopped: (pwsh update failed \u2026the command again.':String) [], RuntimeException
++ FullyQualifiedErrorId : pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+
+♥->Import-Module PSReadScript
+♥->Get-Command -Module PSReadLine
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        PSConsoleHostReadLine                              2.0.0      PSReadLine
+Cmdlet          Get-PSReadLineKeyHandler                           2.0.0      PSReadLine
+Cmdlet          Get-PSReadLineOption                               2.0.0      PSReadLine
+Cmdlet          Remove-PSReadLineKeyHandler                        2.0.0      PSReadLine
+Cmdlet          Set-PSReadLineKeyHandler                           2.0.0      PSReadLine
+Cmdlet          Set-PSReadLineOption                               2.0.0      PSReadLine
+
+♥->Get-Command -Module PSReadScript
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Read-PSFile                                        1.0.0.0    PSReadScript
+Function        Read-PSScript                                      1.0.0.0    PSReadScript
+
+♥->ls
+
+
+    Directory: C:\Windows\Temp
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        15-02-2019     0:04                5c65b4c70
+d-----        15-02-2019     0:04                5c65b4d30
+d-----        15-02-2019     0:05                5c65b4da0
+d-----        15-02-2019     0:05                5c65b4dc0
+d-----        15-02-2019     0:05                5c65b4e00
+d-----        15-02-2019     0:05                5c65b4e70
+d-----        15-02-2019     0:05                CustomINI5c65b4fa28a
+d-----        15-02-2019     0:05                CustomINI5c65b4fa3a3
+d-----        15-02-2019     0:05                CustomINI5c65b4fa77
+d-----        15-02-2019     0:05                CustomINI5c65b4fb113
+d-----        15-02-2019     0:05                CustomINI5c65b4fb22c
+d-----        15-02-2019     0:05                CustomINI5c65b4fb3c2
+d-----        15-02-2019     0:05                CustomINI5c65b4fc28a
+d-----        15-02-2019     0:05                CustomINI5c65b4fc384
+d-----        15-02-2019     0:05                CustomINI5c65b4fce4
+d-----        15-02-2019     0:06                CustomINI5c65b5283a3
+d-----        16-02-2019    14:03                DiagOutputDir
+d-----        16-02-2019     9:39                VSRemoteControl
+d-----        15-02-2019     0:04                VulkanRT
+-a----        15-02-2019     0:07           1020 ASPNETSetup_00000.log
+-a----        15-02-2019     0:07           1022 ASPNETSetup_00001.log
+-a----        15-02-2019     0:04           4234 AudioFilterAgent.INI
+-a----        15-02-2019     0:06            176 BM.INI
+-a----        15-02-2019     7:30          10542 CompatibilityList.xml
+-a----        15-02-2019     0:05           3227 CxAudMsg.ini
+-a----        15-02-2019     0:05           1719 DAX2Config.ini
+-a----        15-02-2019     0:04           5739 DolbyGUI.ini
+-a----        15-02-2019     0:04          36176 EQSettings.ini
+-a----        15-02-2019     0:10              0 FXSAPIDebugLogFile.txt
+-a----        15-02-2019     0:10              0 FXSTIFFDebugLogFile.txt
+-a----        15-02-2019     0:04            380 inst_1_cxm.ini
+-a----        15-02-2019     0:04            359 inst_2_wafa.ini
+-a----        15-02-2019     0:04            389 inst_3_ssp.ini
+-a----        15-02-2019     0:04            381 inst_4_dolbygui.ini
+-a----        15-02-2019     0:04            364 inst_5_dax2.ini
+-a----        15-02-2019     0:04            422 inst_6_saii.ini
+-a----        15-02-2019     0:04          71385 MicEQ.ini
+-a----        15-02-2019     0:04           2862 Misc.ini
+-a----        16-02-2019    13:33          13374 MpCmdRun.log
+-a----        15-02-2019    22:14          16820 MpSigStub.log
+-a----        15-02-2019     0:04          18453 PASettings.ini
+-a----        15-02-2019     0:07           2226 PowerMgrInst.exe.19-02-15_12-07-09-777.log
+-a----        15-02-2019     0:07            462 PowerMgrInst.exe.19-02-15_12-07-26-246.log
+-a----        15-02-2019     0:05           2018 SA2Cmd.ini
+-a----        15-02-2019     0:05            458 SA2Cpl.ini
+-a----        15-02-2019     0:05           1260 SA2EnFlt.ini
+-a----        15-02-2019     0:05            330 SA2LnApp.ini
+-a----        15-02-2019     0:05            649 SA2NGEN.ini
+-a----        15-02-2019     0:06            558 SA2OptReg.ini
+-a----        15-02-2019     0:06           5202 SA2Setup.ini
+-a----        15-02-2019     0:05          54522 SA2SmEq.INI
+-a----        15-02-2019     0:05            279 SA2SrchBr.ini
+-a----        15-02-2019     0:05           1149 SA2Srv.ini
+-a----        15-02-2019     0:05           1849 SA2Util.ini
+-a----        15-02-2019     0:05            531 SA2VER.INI
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+♥->Read-PSFile -LookupPath . -String 's' -Recurse
+♥->Read-PSFile -LookupPath . -String 's' -Recurse -Type .ini
+
+C:\Windows\Temp\AudioFilterAgent.INI
+================================================================================================
+1
+: [Version]
+2
+: Signature        = "$CHICAGO$"
+6
+: [UIUSetupCfg]
+11
+: Setup64FileName = x64\Setup64.exe
+16
+: [TASKS]
+17
+: AddReg   = RunAddReg32, UninstallAddReg, UninstallAddReg32
+18
+: CopyFiles  = CopyFiles32, CopyFiles.TaskScheduler
+19
+: InstallApp = InstallApp.TaskScheduler
+21
+: [TASKS.NTamd64]
+22
+: AddReg   = RunAddReg64, UninstallAddReg, UninstallAddReg64
+23
+: CopyFiles  = CopyFiles64, CopyFiles.TaskScheduler
+24
+: InstallApp = InstallApp.TaskScheduler
+27
+: HKLM,SOFTWARE\Conexant\AFA,AFA_Settings,0x10001,0x00020008
+28
+: ;;HKLM,SOFTWARE\Conexant\AFA\Hotkey,EnableHotkey,0x10001,0x00000001
+29
+: HKLM,SOFTWARE\Conexant\AFA\Hotkey,HotkeyScancode,1,00,00,E0,4E
+30
+: HKLM,SOFTWARE\Conexant\AFA\Hotkey,EnableGPIO0,0x10001,0x00000000
+31
+: HKLM,SOFTWARE\Conexant\AFA\Hotkey,SendMsgOSD,0x10001,0x00000001
+34
+: HKLM,SOFTWARE\Conexant\AFA,AFA_Settings,0x10001,0x00020008
+35
+: ;;HKLM,SOFTWARE\Conexant\AFA\Hotkey,EnableHotkey,0x10001,0x00000001
+36
+: HKLM,SOFTWARE\Conexant\AFA\Hotkey,HotkeyScancode,1,00,00,E0,4E
+37
+: HKLM,SOFTWARE\Conexant\AFA\Hotkey,EnableGPIO0,0x10001,0x00000000
+38
+: HKLM,SOFTWARE\Conexant\AFA\Hotkey,SendMsgOSD,0x10001,0x00000001
+40
+: [UninstallAddReg]
+41
+: HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\cAudioFilterAgent,DisplayName,,    "Conexant Audio Filter Agent"
+42
+: HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\cAudioFilterAgent,DisplayVersion,, "1.7.98.0"
+43
+: HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\cAudioFilterAgent,VersionMajor,,   "1"
+44
+: HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\cAudioFilterAgent,VersionMinor,,   "7"
+45
+: HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\cAudioFilterAgent,Publisher,,      "Conexant Systems"
+46
+: HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\cAudioFilterAgent,InstallLocation,,"%16422%\CONEXANT\cAudioFilterAgent"
+48
+: [UninstallAddReg32]
+49
+: HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\cAudioFilterAgent,UninstallString,, "%16422%\CONEXANT\cAudioFilterAgent\SETUP.EXE -U -IcAudioFilterAgent -SM=cAudioFilterAgent.exe,16"
+51
+: [UninstallAddReg64]
+52
+: HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\cAudioFilterAgent,UninstallString,, "%16422%\CONEXANT\cAudioFilterAgent\SETUP64.EXE -U -IcAudioFilterAgent -SM=cAudioFilterAgent64.exe,16"
+54
+: [SourceDisksNames]
+55
+: 1 = "Installation Disk"
+57
+: [SourceDisksFiles]
+62
+: setup64.exe               = 1,\x64
+63
+: setup.exe                 = 1
+64
+: AFAStartUp.xml     = 1
+65
+: SACpl.exe               = 1,\AFA
+67
+: [DestinationDirs]
+68
+: DefaultDestDir= 16422,Conexant\cAudioFilterAgent
+69
+: CopyFiles32= 16422,Conexant\cAudioFilterAgent
+70
+: CopyFiles64= 16422,Conexant\cAudioFilterAgent
+71
+: CopyFiles.TaskScheduler = 16422,Conexant\cAudioFilterAgent
+73
+: [CopyFiles32]
+74
+: Setup.exe,,,2
+78
+: [CopyFiles64]
+79
+: Setup64.exe,,,2
+83
+: [CopyFiles.TaskScheduler]
+84
+: AFAStartUp.xml,,,2
+85
+: SACpl.exe,,,2
+87
+: [InstallApp.TaskScheduler]
+88
+: InstallApp   = "%11%\schtasks.exe","/delete /tn \microsoft\windows\Conexant\AFA /f", 0x100,,,,,,1000
+89
+: InstallApp   = "%11%\schtasks.exe","/delete /tn \microsoft\windows\Conexant /f", 0x100,,,,,,1000
+90
+: InstallApp   = "%11%\schtasks.exe","/Create /XML """%16422%\Conexant\cAudioFilterAgent\AFAStartUp.xml""" /TN \Microsoft\Windows\Conexant\AFA", 0x80100,,,,,,1000
+91
+: InstallApp   = "%11%\schtasks.exe","/Run /TN \Microsoft\Windows\Conexant\AFA", 0x80100,,,,,,1000
+92
+: UninstallApp = "%11%\schtasks.exe","/delete /tn \microsoft\windows\Conexant\AFA /f", 0x100,,,,,,1000
+93
+: UninstallApp = "%11%\schtasks.exe","/delete /tn \microsoft\windows\Conexant /f", 0x100,,,,,,1000
+95
+: [DelRegUninstall.RunAfterInstallation]
+96
+: HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run, cAudioFilterAgent
+97
+: HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\Run, cAudioFilterAgent
+99
+: [Strings]
+101
+: AppInstDir   = "cAudioFilterAgent"
+
+C:\Windows\Temp\BM.INI
+================================================================================================
+1
+: [Version]
+2
+: Signature = $CHICAGO$
+3
+: [TASKS]
+6
+: HKLM,SOFTWARE\Conexant\SAII,SmartAudioSettings,1,00,12,00,20,20,00,08,00,02,02,48,00,10,38
+
+C:\Windows\Temp\CxAudMsg.ini
+================================================================================================
+1
+: ; The path of the SAService.exe CopyFiles path must be the same as the SAII file
+2
+: ; defined in the SAII.INI file.
+♥->TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+♥->clear
+♥->Read-PSScript -Script C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1 -HideOutput -HideError -ExecuteAndShowBadLineAs TextTable
+Installed pwsh version is 6.2.0-preview.4
+Fetching latest releases
+Latest released packages are below
+Downloading latest release
+♥->TerminatingError(Invoke-WebRequest): "Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+>> TerminatingError(Invoke-WebRequest): "Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+
+Line Expression
+---- ----------
+  88     Invoke-WebRequest $RequiredPackage.Browser_Download_Url -Out "$DownloadPath" -ErrorAc…
+ 135     Throw "pwsh update failed with error '$_'"
+
+♥->Set-PSBreakpoint -Script C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1 -Line 88
+
+  ID Script                Line Command               Variable             Action
+  -- ------                ---- -------               --------             ------
+   0 UpgradepwshDebug.ps1    88
+
+♥->C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1 -Prerelease
+Installed pwsh version is 6.2.0-preview.4
+Fetching latest releases
+Latest released packages are below
+Downloading latest release
+♥->$DownloadPath
+\Users\kvprasoon\Downloads\TerminatingError(Invoke-WebRequest): "Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+>> TerminatingError(Invoke-WebRequest): "Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+\Users\kvprasoon\Downloads\$RequiredPackage.Browser_Download_Url
+\Users\kvprasoon\Downloads\$Release
+\Users\kvprasoon\Downloads\$LatestRelease
+\Users\kvprasoon\Downloads\$Releases
+>> TerminatingError(): "The pipeline has been stopped."
+tarball_url      : https://api.github.com/repos/PowerShell/PowerShell/tarball/v6.1.0-preview.1$ReleaseToDownload
+tarball_url      : https://api.github.com/repos/PowerShell/PowerShell/tarball/v6.1.0-preview.1$ReleaseMetadata
+$ReleaseMetadata.NextRelesaeTag
+CommandInvocation(Resolve-Path): "Resolve-Path"
+>> ParameterBinding(Resolve-Path): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="Verbose"; value="False"
+>> ParameterBinding(Resolve-Path): name="Debug"; value="False"
+>> ParameterBinding(Resolve-Path): name="Path"; value="$ReleaseMetadata.NextRe*"
+CommandInvocation(Get-ChildItem): "Get-ChildItem"
+>> ParameterBinding(Get-ChildItem): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="Verbose"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Debug"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Path"; value="$ReleaseMetadata.NextRe*"
+>> ParameterBinding(Get-ChildItem): name="Hidden"; value="True"
+CommandInvocation(Resolve-Path): "Resolve-Path"
+>> ParameterBinding(Resolve-Path): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="Verbose"; value="False"
+>> ParameterBinding(Resolve-Path): name="Debug"; value="False"
+>> ParameterBinding(Resolve-Path): name="Path"; value="$ReleaseMetadata.Next*"
+CommandInvocation(Get-ChildItem): "Get-ChildItem"
+>> ParameterBinding(Get-ChildItem): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="Verbose"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Debug"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Path"; value="$ReleaseMetadata.Next*"
+>> ParameterBinding(Get-ChildItem): name="Hidden"; value="True"
+CommandInvocation(Resolve-Path): "Resolve-Path"
+>> ParameterBinding(Resolve-Path): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="Verbose"; value="False"
+>> ParameterBinding(Resolve-Path): name="Debug"; value="False"
+>> ParameterBinding(Resolve-Path): name="Path"; value="$ReleaseMetadata.Next*"
+CommandInvocation(Get-ChildItem): "Get-ChildItem"
+>> ParameterBinding(Get-ChildItem): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="Verbose"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Debug"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Path"; value="$ReleaseMetadata.Next*"
+>> ParameterBinding(Get-ChildItem): name="Hidden"; value="True"
+CommandInvocation(Resolve-Path): "Resolve-Path"
+>> ParameterBinding(Resolve-Path): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="Verbose"; value="False"
+>> ParameterBinding(Resolve-Path): name="Debug"; value="False"
+>> ParameterBinding(Resolve-Path): name="Path"; value="$ReleaseMetadata.Next*"
+CommandInvocation(Get-ChildItem): "Get-ChildItem"
+>> ParameterBinding(Get-ChildItem): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="Verbose"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Debug"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Path"; value="$ReleaseMetadata.Next*"
+>> ParameterBinding(Get-ChildItem): name="Hidden"; value="True"
+CommandInvocation(Resolve-Path): "Resolve-Path"
+>> ParameterBinding(Resolve-Path): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="Verbose"; value="False"
+>> ParameterBinding(Resolve-Path): name="Debug"; value="False"
+>> ParameterBinding(Resolve-Path): name="Path"; value="$ReleaseMetadata.Next*"
+CommandInvocation(Get-ChildItem): "Get-ChildItem"
+>> ParameterBinding(Get-ChildItem): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="Verbose"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Debug"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Path"; value="$ReleaseMetadata.Next*"
+>> ParameterBinding(Get-ChildItem): name="Hidden"; value="True"
+CommandInvocation(Resolve-Path): "Resolve-Path"
+>> ParameterBinding(Resolve-Path): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="Verbose"; value="False"
+>> ParameterBinding(Resolve-Path): name="Debug"; value="False"
+>> ParameterBinding(Resolve-Path): name="Path"; value="$ReleaseMetadata.Next*"
+CommandInvocation(Get-ChildItem): "Get-ChildItem"
+>> ParameterBinding(Get-ChildItem): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="Verbose"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Debug"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Path"; value="$ReleaseMetadata.Next*"
+>> ParameterBinding(Get-ChildItem): name="Hidden"; value="True"
+CommandInvocation(Resolve-Path): "Resolve-Path"
+>> ParameterBinding(Resolve-Path): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="Verbose"; value="False"
+>> ParameterBinding(Resolve-Path): name="Debug"; value="False"
+>> ParameterBinding(Resolve-Path): name="Path"; value="$ReleaseMetadata.Next*"
+CommandInvocation(Get-ChildItem): "Get-ChildItem"
+>> ParameterBinding(Get-ChildItem): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="Verbose"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Debug"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Path"; value="$ReleaseMetadata.Next*"
+>> ParameterBinding(Get-ChildItem): name="Hidden"; value="True"
+CommandInvocation(Resolve-Path): "Resolve-Path"
+>> ParameterBinding(Resolve-Path): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="Verbose"; value="False"
+>> ParameterBinding(Resolve-Path): name="Debug"; value="False"
+>> ParameterBinding(Resolve-Path): name="Path"; value="$ReleaseMetadata.Next*"
+CommandInvocation(Get-ChildItem): "Get-ChildItem"
+>> ParameterBinding(Get-ChildItem): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="Verbose"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Debug"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Path"; value="$ReleaseMetadata.Next*"
+>> ParameterBinding(Get-ChildItem): name="Hidden"; value="True"
+CommandInvocation(Resolve-Path): "Resolve-Path"
+>> ParameterBinding(Resolve-Path): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="Verbose"; value="False"
+>> ParameterBinding(Resolve-Path): name="Debug"; value="False"
+>> ParameterBinding(Resolve-Path): name="Path"; value="$ReleaseMetadata.Next*"
+CommandInvocation(Get-ChildItem): "Get-ChildItem"
+>> ParameterBinding(Get-ChildItem): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="Verbose"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Debug"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Path"; value="$ReleaseMetadata.Next*"
+>> ParameterBinding(Get-ChildItem): name="Hidden"; value="True"
+$ReleaseMetadata.NextReleaseTag
+v6.2.0-preview.4TerminatingError(): "pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'"
+>> TerminatingError(): "pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'"
+pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+At C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1:135 char:5
++     Throw "pwsh update failed with error '$_'"
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : OperationStopped: (pwsh update failed \u2026the command again.':String) [], RuntimeException
++ FullyQualifiedErrorId : pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+
+♥->$Error[0]
+pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+At C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1:135 char:5
++     Throw "pwsh update failed with error '$_'"
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : OperationStopped: (pwsh update failed \u2026the command again.':String) [], RuntimeException
++ FullyQualifiedErrorId : pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+
+♥->$Error[0] | fl *
+pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+At C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1:135 char:5
++     Throw "pwsh update failed with error '$_'"
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : OperationStopped: (pwsh update failed \u2026the command again.':String) [], RuntimeException
++ FullyQualifiedErrorId : pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+
+♥->$Error[0] | gm
+
+
+   TypeName: System.Management.Automation.ErrorRecord
+Name                  MemberType     Definition
+----                  ----------     ----------
+Equals                Method         bool Equals(System.Object obj)
+GetHashCode           Method         int GetHashCode()
+GetObjectData         Method         void GetObjectData(System.Runtime.Serialization.Serializa…
+GetType               Method         type GetType()
+ToString              Method         string ToString()
+CategoryInfo          Property       System.Management.Automation.ErrorCategoryInfo CategoryIn…
+ErrorDetails          Property       System.Management.Automation.ErrorDetails ErrorDetails {g…
+Exception             Property       System.Exception Exception {get;}
+FullyQualifiedErrorId Property       string FullyQualifiedErrorId {get;}
+InvocationInfo        Property       System.Management.Automation.InvocationInfo InvocationInf…
+PipelineIterationInfo Property       System.Collections.ObjectModel.ReadOnlyCollection[int] Pi…
+ScriptStackTrace      Property       string ScriptStackTrace {get;}
+TargetObject          Property       System.Object TargetObject {get;}
+PSMessageDetails      ScriptProperty System.Object PSMessageDetails {get=& { Set-StrictMode -V…
+
+♥->clear
+♥->Get-PSBreakpoint 
+
+  ID Script                Line Command               Variable             Action
+  -- ------                ---- -------               --------             ------
+   0 UpgradepwshDebug.ps1    88
+
+♥->Get-PSBreakpoint  | Remove-PSBreakpoint
+♥->Get-PSBreakpoint 
+♥->cls
+♥->Set-PSBreakpoint -Variable ReleaseMetadata
+
+  ID Script                Line Command               Variable             Action
+  -- ------                ---- -------               --------             ------
+   1                                                  ReleaseMetadata
+
+♥->Set-PSBreakpoint -Variable ReleaseMetadata -Mode Write
+
+  ID Script                Line Command               Variable             Action
+  -- ------                ---- -------               --------             ------
+   2                                                  ReleaseMetadata
+
+♥->Get-PSBreakpoint  | Remove-PSBreakpoint
+♥->Set-PSBreakpoint -Variable ReleaseMetadata -Mode Write
+
+  ID Script                Line Command               Variable             Action
+  -- ------                ---- -------               --------             ------
+   3                                                  ReleaseMetadata
+
+♥->clear
+♥->C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1 -Prerelease
+Installed pwsh version is 6.2.0-preview.4
+Fetching latest releases
+♥->clear
+♥->Get-PSBreakpoint  | Remove-PSBreakpoint
+♥->Set-PSBreakpoint -Command InstallForWindows
+
+  ID Script                Line Command               Variable             Action
+  -- ------                ---- -------               --------             ------
+   4                            InstallForWindows
+
+♥->C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1 -Prerelease
+Installed pwsh version is 6.2.0-preview.4
+Fetching latest releases
+♥->clear
+♥->Get-PSBreakpoint  | Remove-PSBreakpoint
+♥->cls
+♥->$Job = Start-Job -FilePath C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1
+♥->$Job
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Comma
+                                                                                          nd
+--     ----            -------------   -----         -----------     --------             -----
+2      Job2            BackgroundJob   AtBreakpoint  True            localhost            #req…
+
+♥->Debug-Job -Job $Job
+♥->>q
+q : The term 'q' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ q
++ ~
++ CategoryInfo          : ObjectNotFound: (q:String) [], CommandNotFoundException
++ FullyQualifiedErrorId : CommandNotFoundException
+q : The term 'q' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ q
++ ~
++ CategoryInfo          : ObjectNotFound: (q:String) [], CommandNotFoundException
++ FullyQualifiedErrorId : CommandNotFoundException
+
+♥->Get-PSBreakpoint
+♥->$Job
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Comma
+                                                                                          nd
+--     ----            -------------   -----         -----------     --------             -----
+2      Job2            BackgroundJob   Failed        True            localhost            #req…
+
+♥->clear
+♥->$Server
+192.168.222.147
+♥->cls
+♥->Get-PSSession
+♥->New-PSSession -ComputerName $Server -Credential $Cred
+
+ Id Name            Transport ComputerName    ComputerType    State         ConfigurationName
+ -- ----            --------- ------------    ------------    -----         -----------------
+  3 Runspace3       WSMan     192.168.222.147 RemoteMachine   Opened        Microsoft.PowerShe…
+
+♥->$Session = Get-PSSession
+♥->Invoke-Command -Session $Session -FilePath C:\dev\PowerShell\Demo\Debugging\UpgradepwshDebug.ps1
+Installed pwsh version is 5.1.17763.134
+Fetching latest releases
+>> TerminatingError(): "pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'"
+>> TerminatingError(): "pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'"
+pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+At line:1 char:1
++ Invoke-Command -Session $Session -FilePath C:\dev\PowerShell\Demo\Deb ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : OperationStopped: (pwsh update failed \u2026the command again.':String) [], RuntimeException
++ FullyQualifiedErrorId : pwsh update failed with error 'Cannot validate argument on parameter 'Uri'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.'
+
+♥->Enter-PSSession $Session
+♥->Invoke-Command $Session  -ScriptBlock {$r}
+1
+♥->clear
+♥->clear
+♥->clear
