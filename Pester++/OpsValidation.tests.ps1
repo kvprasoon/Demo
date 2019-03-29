@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory = $False)]
-    [string]$ConfigPath = 'C:\Dev\PowerShell\Pester\OpsValidation.config.json'
+    [string]$ConfigPath = 'C:\Users\kvprasoon\Documents\GitHub\Demo\Pester++\OpsValidation.config.json'
 )
 
 $Config = Get-Content -Path $ConfigPath | ConvertFrom-Json

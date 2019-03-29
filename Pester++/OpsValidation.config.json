@@ -8,12 +8,12 @@
             {
                 "name": "BITS",
                 "status": "running",
-                "startmode": "auto"
+                "startmode": "automatic"
             },
             {
                 "name": "wuauserv",
                 "status": "running",
-                "startmode": "auto"
+                "startmode": "automatic"
             }
         ]
     },
