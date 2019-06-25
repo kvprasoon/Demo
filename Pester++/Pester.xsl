@@ -104,6 +104,7 @@
                         <xsl:if test="$failures &gt; '0'">
                             <th class="th" width="400">Remarks</th>
                         </xsl:if>
+                        <!-- <th width="100" class="th">Hot Fix</th> -->
 
                     </tr>
 
@@ -146,6 +147,7 @@
                                     </xsl:if>
                                 </td>
                             </xsl:if>
+                            <!-- <td><a href="www.google.com"> HotFix </a></td> -->
                         </tr>
                     </xsl:for-each>
                 </table>
