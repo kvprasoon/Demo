@@ -17,11 +17,11 @@ Describe "Describing validation tests post deployment" {
 
                 it "Service $Name status should be $Status" {
                     $Service.Status | Should -Be $Status
-                }
+                } -Remark ($Config.Service.suggestion.status -f $Name,$Status)
 
                 it "Service $Name startmode should be $StartMode" {
                     $Service.StartType | Should -Be $StartMode
-                }
+                } -Remark ($Config.Service.suggestion.startmode -f $Name,$StartMode)
             }
         }
     }
@@ -37,7 +37,7 @@ Describe "Describing validation tests post deployment" {
             it "user $User should have $Permission permission on path $Path" {
                 $Access = (Get-Acl -Path $Path).Access | WHere-Object -FilterScript {$_.IdentityReference -eq $User}
                 $Access.FileSystemRights | Should -Contain $Permission
-            }
+            } -Remark ($Config.folderpermission.suggestion.message -f $Permission,$User,$Path)
         }
     }
 
@@ -51,11 +51,11 @@ Describe "Describing validation tests post deployment" {
 
             it "A Firewall rule with name $RuleName should be available" {
                 $Rule | Should -Not -BeNullOrEmpty
-            }
+            } -Remark ($Config.firewallrule.suggestion.rulename -f $Direction,$Rulename)
 
             it "Firewall rule $RuleName should be allowed for $Direction connection" {
                 $Rule.Direction | Should -Not $Direction
-            }
+            } -Remark ($Config.firewallrule.suggestion.direction -f $Rulename,$Direction)
         }
     }
 }
