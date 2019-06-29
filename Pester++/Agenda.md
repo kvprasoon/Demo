@@ -18,4 +18,4 @@
 
   >- [github.com/kvprasoon](github.com/kvprasoon)
 
-  >- PowerShell Community Hero 2019 :boom:
+  >- PowerShell Community Hero 2019
