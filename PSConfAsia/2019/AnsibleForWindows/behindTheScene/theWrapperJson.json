@@ -11,7 +11,7 @@
         "Ansible.Basic": "ansibleBasic.cs"
     },
     "actions": [
-        "module_powershell_wrapper"
+        "module_powershell_wrapper.ps1"
     ],
     "environment": {},
     "module_wrapper": "moduleWrapper.ps1",
