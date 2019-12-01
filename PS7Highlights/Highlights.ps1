@@ -57,27 +57,106 @@ Clear-History
 #endregion
 
 #region Ternary operator
+    $a = 5
+    $b = 10
 
+    # The old way
+    if($a -gt $b){
+        'a is greater than b'
+    }
+    else{
+        'b is greater than a'
+    }
+
+    #or
+
+    if($a -lt $b){
+        'b is greater than a'
+    }
+    else{
+        'a is greater than b'
+    }
+
+    # Using Ternary operator
+    # condition ? iftrue : else
+    $a -gt $b ? 'a is greater than b' : 'b is greater than a'
+
+    $a -lt $b ? 'b is greater than a' : 'a is greater than b'
 #endregion
 
 #region Erroraction Break
+    C:\Users\kvprasoon\Documents\GitHub\Demo\PS7Highlights\script1.ps1 -Path c:\Temp
 
+    C:\Users\kvprasoon\Documents\GitHub\Demo\PS7Highlights\script1.ps1 -Path c:\Temp -ErrorAction Break
 #endregion
 
 #region Pipeline chain operators
+    # Last execeution status
+    $?
 
+    # Existing approach
+    if($?){
+        'if previous execution is successful, then do something'
+    }
+    else{
+        'do nothing'
+    }
+
+    # Chain operators && and ||
+    ($Output = Get-Process -Name pwsh) && "$($Output.Count) pwsh found" # execute if previsous exec is success
+
+    ($Output = Get-Service -Name pwsh) || "No pwsh found" # execute if previsous exec is failure
+
+    ($Output = Get-Service -Name pwsh) && "$($Output.Count) pwsh found" || "No pwsh found"
+
+    ($Output = Get-Process -Name pwsh) && "$($Output.Count) pwsh found" || "No pwsh found"
 #endregion
 
-#region Null conditional, coaelcing and assignment operator
 
+#region Null conditional, coaelcing and assignment operator
+    $Value = $null
+
+    # Existing appraoch for Null condition check
+    if($null -eq $Value){
+        'Value is null'
+    }
+
+    $Value ?? 'Value is null'
+
+    # Existing appraoch for Null condition check and assignment
+    "Value is before check is $Value"
+    if($null -eq $Value){
+        $Value = 1
+        "Value is now $Value"
+    }
+
+    $Value = $null
+
+    "Value is before check is $Value"
+    $Value ??= 1
+
+    "Value is now $Value"
 #endregion
 
 #region Tab completion for variable assignments
+    $ErrorActionPreference = 'Stop'
+#endregion
+
+#region New version notification
 
 #endregion
 
 #region Error view and Get-Error cmdlet
+    $ErrorView # new error view variable
+    Get-Process foo
 
+    $ErrorView = 'CategoryView'
+    Get-Process foo
+
+    $ErrorView = 'NormalView'
+    Get-Process foo
+
+    Get-Error -Newest
 #endregion
 
 #region Null conditional member and method accessing
