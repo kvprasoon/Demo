@@ -19,11 +19,13 @@ Clear-History
 
 #endregion
 
+
 #region History duration
     Get-History
 
     Get-History | Select-Object -First 1 | Format-List *
 #endregion
+
 
 #region Line continuation
     # Wrapping with a pipe at the end of a line
@@ -42,6 +44,7 @@ Clear-History
         | Sort FullName -Unique
 #endregion
 
+
 #region Foreach parallel
     Measure-Command -Expression {1..10 | ForEach-Object -Process {Write-Host  "number $_" ; Start-Sleep -Seconds 1}}
 
@@ -52,9 +55,6 @@ Clear-History
     # Very detailed blog post: https://devblogs.microsoft.com/powershell/powershell-foreach-object-parallel-feature/
 #endregion
 
-#region as login shell
-
-#endregion
 
 #region Ternary operator
     $a = 5
@@ -84,11 +84,13 @@ Clear-History
     $a -lt $b ? 'b is greater than a' : 'a is greater than b'
 #endregion
 
+
 #region Erroraction Break
     C:\Users\kvprasoon\Documents\GitHub\Demo\PS7Highlights\script1.ps1 -Path c:\Temp
 
     C:\Users\kvprasoon\Documents\GitHub\Demo\PS7Highlights\script1.ps1 -Path c:\Temp -ErrorAction Break
 #endregion
+
 
 #region Pipeline chain operators
     # Last execeution status
@@ -113,7 +115,7 @@ Clear-History
 #endregion
 
 
-#region Null conditional, coaelcing and assignment operator
+#region Null conditional and assignment operator
     $Value = $null
 
     # Existing appraoch for Null condition check
@@ -143,7 +145,7 @@ Clear-History
 #endregion
 
 #region New version notification
-
+    start-Process -FilePath 'C:\Users\kvprasoon\Downloads\PowerShell-7.0.0-preview.5-win-x64\pwsh.exe'
 #endregion
 
 #region Error view and Get-Error cmdlet
@@ -159,14 +161,31 @@ Clear-History
     Get-Error -Newest
 #endregion
 
-#region Null conditional member and method accessing
+#region Null conditional member accessing and indexing
+    $NoValue = $null
 
+    # Member access on a null value
+        $NoValue.Open()
+        if($null -ne $NoValue){
+            $NoValue.Open()
+        }
+        # Null conditional Member access
+        ${NoValue}?.Open()
+
+    # Indexing on a null value
+        $NoValue = $null
+        $NoValue[1]
+        if($null -ne $NoValue){
+            $NoValue[2]
+        }
+
+        # Null conditional indexing
+        ${NoValue}?[1]
+
+        $NoValue = 1,2,3
+        ${NoValue}?[1]
 #endregion
 
-#region Unix filesystem info
-
-#endregion
-
-#region Import windows modules with WinComp
+#region -SecurityDescriptorSddl parameter for Set and New Service cmdlets
 
 #endregion
