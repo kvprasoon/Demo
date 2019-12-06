@@ -140,13 +140,16 @@ Clear-History
     "Value is now $Value"
 #endregion
 
+
 #region Tab completion for variable assignments
     $ErrorActionPreference = 'Stop'
 #endregion
 
+
 #region New version notification
     start-Process -FilePath 'C:\Users\kvprasoon\Downloads\PowerShell-7.0.0-preview.5-win-x64\pwsh.exe'
 #endregion
+
 
 #region Error view and Get-Error cmdlet
     $ErrorView # new error view variable
@@ -160,6 +163,7 @@ Clear-History
 
     Get-Error -Newest
 #endregion
+
 
 #region Null conditional member accessing and indexing
     $NoValue = $null
@@ -186,6 +190,11 @@ Clear-History
         ${NoValue}?[1]
 #endregion
 
+
 #region -SecurityDescriptorSddl parameter for Set and New Service cmdlets
 
+
+New-Service -Name TestService -SecurityDescriptorSddl 'D:(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)' -BinaryPathName c:\windows\system32\cmd.exe
+
+Set-Service -Name TestService -SecurityDescriptorSddl 'D:(A;;CCLCSWLOCRRC;;;SU)(D;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)'
 #endregion
