@@ -8,7 +8,8 @@ Clear-History
         $String -split ' '
 
     # conditional split with scriptblock
-        $String -split {$_ -eq' ' -or $_ -eq ','}
+        $String -split {$_ -eq ' ' -or $_ -eq ','}
+        $String -split ' |,'
 
     # max substrings split
         $String -split ' ', 3
@@ -29,19 +30,19 @@ Clear-History
 
 #region Line continuation
     # Wrapping with a pipe at the end of a line
-    Get-Process | Where Path |
-        Get-Item | Where FullName -match "AppData" |
-        Sort FullName -Unique
+    Get-Process | Where-Object -FilterScript {$_.Path} |
+        Get-Item | Where-Object -FilterScript {$_.FullName -match "AppData"} |
+        Sort-Object -Property FullName -Unique
 
     # Wrapping with a backtick at the end of a line and a pipe at the beginning of a line
-    Get-Process | Where Path `
-        | Get-Item | Where FullName -match "AppData" `
-        | Sort FullName -Unique
+    Get-Process | Where-Object -FilterScript {$_.Path} `
+        | Get-Item | Where-Object -FilterScript {$_.FullName -match "AppData"} `
+        | Sort-Object -Property FullName -Unique
 
     # Wrapping with a pipe at the beginning of a line (no backtick required)
-    Get-Process | Where Path
-        | Get-Item | Where FullName -match "AppData"
-        | Sort FullName -Unique
+    Get-Process | Where-Object -FilterScript {$.Path}
+        | Get-Item | Where-Object -FilterScript {$_.FullName -match "AppData"}
+        | Sort-Object -Property FullName -Unique
 #endregion
 
 
@@ -50,7 +51,7 @@ Clear-History
 
     Measure-Command -Expression {1..10 | ForEach-Object -Parallel {Write-Host  "number $_" ; Start-Sleep -Seconds 1}}
 
-    Measure-Command -Expression {1..10 | ForEach-Object -Parallel  {Write-Host  "number $_" ; Start-Sleep -Seconds 1}} -ThrottleLimit 2
+    Measure-Command -Expression {1..10 | ForEach-Object -Parallel  {Write-Host  "number $_" ; Start-Sleep -Seconds 1} -ThrottleLimit 10}
 
     # Very detailed blog post: https://devblogs.microsoft.com/powershell/powershell-foreach-object-parallel-feature/
 #endregion
@@ -107,9 +108,11 @@ Clear-History
     # Chain operators && and ||
     ($Output = Get-Process -Name pwsh) && "$($Output.Count) pwsh found" # execute if previsous exec is success
 
-    ($Output = Get-Service -Name pwsh) || "No pwsh found" # execute if previsous exec is failure
+    ($Output = Get-Process -Name blah) && "$($Output.Count) blah found" # doesn't execute if previsous exec fails
 
-    ($Output = Get-Service -Name pwsh) && "$($Output.Count) pwsh found" || "No pwsh found"
+    ($Output = Get-Process -Name blah) || "No blah found" # execute if previsous exec is failure
+
+    ($Output = Get-process -Name blah) && "$($Output.Count) blah found" || "No blah found"
 
     ($Output = Get-Process -Name pwsh) && "$($Output.Count) pwsh found" || "No pwsh found"
 #endregion
@@ -195,6 +198,8 @@ Clear-History
 
 
 New-Service -Name TestService -SecurityDescriptorSddl 'D:(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)' -BinaryPathName c:\windows\system32\cmd.exe
+sc.exe sdshow testservice
 
 Set-Service -Name TestService -SecurityDescriptorSddl 'D:(A;;CCLCSWLOCRRC;;;SU)(D;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)'
+sc.exe sdshow testservice
 #endregion

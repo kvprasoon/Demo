@@ -1,7 +1,7 @@
 [cmdletbinding()]
 Param($Path)
 
-$ChildItem = Get-ChildItem -Path $Path -Directory
+$ChildItem = Get-ChildItem -Path $Path  -Directory
 
 $Length = $ChildItem | Get-Item | Select-Object -ExpandProperty Length
 
