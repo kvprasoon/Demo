@@ -1,4 +1,4 @@
-Clear-History
+
 #region Negative Splits
 
     $String = 'a b c d,e,d'
@@ -9,7 +9,7 @@ Clear-History
 
     # conditional split with scriptblock
         $String -split {$_ -eq ' ' -or $_ -eq ','}
-        $String -split ' |,'
+        $String -split ' |,' # using regex
 
     # max substrings split
         $String -split ' ', 3
@@ -87,9 +87,9 @@ Clear-History
 
 
 #region Erroraction Break
-    C:\Users\kvprasoon\Documents\GitHub\Demo\PS7Highlights\script1.ps1 -Path c:\Temp
+    .\script1.ps1 -Path c:\Temp
 
-    C:\Users\kvprasoon\Documents\GitHub\Demo\PS7Highlights\script1.ps1 -Path c:\Temp -ErrorAction Break
+    .\script1.ps1 -Path c:\Temp -ErrorAction Break
 #endregion
 
 
@@ -201,5 +201,4 @@ New-Service -Name TestService -SecurityDescriptorSddl 'D:(A;;CCLCSWLOCRRC;;;SU)(
 sc.exe sdshow testservice
 
 Set-Service -Name TestService -SecurityDescriptorSddl 'D:(A;;CCLCSWLOCRRC;;;SU)(D;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)'
-sc.exe sdshow testservice
 #endregion
